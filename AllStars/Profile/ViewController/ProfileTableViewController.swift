@@ -79,6 +79,12 @@ class ProfileTableViewController: UITableViewController {
         return headerView
     }
     
+    @IBAction func starPressed(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Stars", bundle: nil)
+        let recommendVC = storyboard.instantiateViewControllerWithIdentifier("recommendVC")
+        presentViewController(recommendVC, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
