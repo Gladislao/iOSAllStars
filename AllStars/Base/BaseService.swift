@@ -15,7 +15,7 @@ class BaseService {
 
     static let allStarsURL = "https://allstars-belatrix.herokuapp.com"
     
-    class func makeRequest(endpoint : String?, method : Alamofire.Method, parameters : Dictionary<String,String>?, onCompletion : ServiceResponse) {
+    class func makeRequest(endpoint : String?, method : Alamofire.Method, parameters : Dictionary<String,AnyObject>?, onCompletion : ServiceResponse) {
 
         guard let safeEndpoint = endpoint where endpoint?.characters.count > 0 else {
             return

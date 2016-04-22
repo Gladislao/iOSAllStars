@@ -19,12 +19,12 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
     var user: User!
     var comment: String? {
         didSet {
-            enableDoneButton()
+            dismissOnTopVCAndEnableDoneButton()
         }
     }
     var subcategory: Category? {
         didSet {
-            enableDoneButton()
+            dismissOnTopVCAndEnableDoneButton()
         }
     }
     
@@ -34,12 +34,18 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
     }
     
     private func initViews() {
+        navigationItem.title = "Recommendation"
         userNameLabel.text = user.getFullName()
         doneBarButtonItem.enabled = false
     }
     
     @IBAction func donePressed(sender: UIBarButtonItem) {
-        
+        let userId = UInt(Utils.load(Utils.userIdKey))
+        if let userId = userId {
+            RecommendService.recommend(userId, toId: user.pk!, subcategory: subcategory!, comment: comment) { (json: AnyObject?, error: NSError?) in
+                print(json)
+            }
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -59,7 +65,8 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
         categoryLabel.text = subcategory.name
     }
     
-    func enableDoneButton() {
+    private func dismissOnTopVCAndEnableDoneButton() {
+        dismissViewControllerAnimated(true, completion: nil)
         if subcategory != nil {
             doneBarButtonItem.enabled = true
         }

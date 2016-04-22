@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Recommendation-->
+        <!--Recommend Table View Controller-->
         <scene sceneID="gP6-T6-tLd">
             <objects>
                 <tableViewController id="Mrh-nQ-g5S" customClass="RecommendTableViewController" customModule="AllStars" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                             <outlet property="delegate" destination="Mrh-nQ-g5S" id="zcE-nY-OcA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recommendation" id="qPO-mF-MZF">
+                    <navigationItem key="navigationItem" id="qPO-mF-MZF">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XPl-Gf-7Cs">
                             <connections>
                                 <action selector="donePressed:" destination="Mrh-nQ-g5S" id="XkE-4I-cgd"/>
@@ -119,11 +119,47 @@
                         <outlet property="commentLabel" destination="Fhm-qb-t0U" id="6so-0e-3zW"/>
                         <outlet property="doneBarButtonItem" destination="XPl-Gf-7Cs" id="vYN-64-cXt"/>
                         <outlet property="userNameLabel" destination="wfS-O5-p2v" id="oDk-op-vvo"/>
+                        <segue destination="XwX-gT-1gl" kind="show" id="dT5-We-3qo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKY-iK-p0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="510"/>
+            <point key="canvasLocation" x="1152" y="510"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="Jru-fm-P3q">
+            <objects>
+                <viewController id="XwX-gT-1gl" customClass="AddCommentViewController" customModule="AllStars" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FwS-d9-iwE"/>
+                        <viewControllerLayoutGuide type="bottom" id="pUD-hI-p67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrB-mq-T2i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-vq-twZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HXc-vq-twZ" firstAttribute="leading" secondItem="DrB-mq-T2i" secondAttribute="leading" id="GuH-eO-Pdf"/>
+                            <constraint firstAttribute="trailing" secondItem="HXc-vq-twZ" secondAttribute="trailing" id="Ukf-m1-dzT"/>
+                            <constraint firstItem="HXc-vq-twZ" firstAttribute="top" secondItem="FwS-d9-iwE" secondAttribute="bottom" id="a4F-J1-JM0"/>
+                            <constraint firstItem="pUD-hI-p67" firstAttribute="top" secondItem="HXc-vq-twZ" secondAttribute="bottom" id="sbJ-8e-9wI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="HXc-vq-twZ" id="B1r-gs-a7n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gNr-ku-Dtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D4q-PN-cq9">

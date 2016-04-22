@@ -10,10 +10,27 @@ import Foundation
 
 class RecommendService: BaseService {
     
-    private static let recomendURL = "/api/star/{from_employee_id}/give/star/to/{to_employee_id}"
     
-    class func recommend(fromId: UInt, toId: UInt, onCompletion: ServiceResponse) {
-        
+    class func recommend(fromId: UInt, toId: UInt, subcategory: Category, comment: String?, onCompletion: ServiceResponse) {
+        let segments: [(key: String, value: String)] = [
+            (Constants.PathSegmentKeys.fromEmployee, String(fromId)),
+            (Constants.PathSegmentKeys.toEmployee, String(toId))
+        ]
+        let url = subtituteKeyInMethod(Constants.Methods.recommend, pathSegments: segments)
+        var params: [String: AnyObject!] = [
+            Constants.JSONBodyKeys.category : subcategory.parentCategoryPk,
+            Constants.JSONBodyKeys.subcategory : subcategory.pk
+        ]
+        if let comment = comment {
+            params[Constants.JSONBodyKeys.text] = comment
+        }
+        makeRequest(url, method: .POST, parameters: params) { (json: AnyObject?, error: NSError?) in
+            if error == nil {
+                onCompletion(json, nil)
+            } else {
+                onCompletion(nil, error)
+            }
+        }
     }
     
 }

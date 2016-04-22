@@ -32,6 +32,8 @@
 		B22419961CC97FAA00E28914 /* RecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */; };
 		B224199A1CC98BD200E28914 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419991CC98BD200E28914 /* Category.swift */; };
 		B224199D1CC9923E00E28914 /* RecommendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224199C1CC9923E00E28914 /* RecommendService.swift */; };
+		B224199F1CCA88CE00E28914 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224199E1CCA88CE00E28914 /* Constants.swift */; };
+		B22419A11CCA914100E28914 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419A01CCA914100E28914 /* AddCommentViewController.swift */; };
 		B24F5F281CC974C2005AD337 /* Stars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24F5F271CC974C2005AD337 /* Stars.storyboard */; };
 		E68911A22F3009CCE1BA36BD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE28D5EB2F61DD77C0E1530 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendTableViewController.swift; sourceTree = "<group>"; };
 		B22419991CC98BD200E28914 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B224199C1CC9923E00E28914 /* RecommendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendService.swift; sourceTree = "<group>"; };
+		B224199E1CCA88CE00E28914 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B22419A01CCA914100E28914 /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCommentViewController.swift; path = ../../../../../../Applications/AddCommentViewController.swift; sourceTree = "<group>"; };
 		B24F5F271CC974C2005AD337 /* Stars.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stars.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 			children = (
 				5E0857121CB6BACF00AFDD24 /* Utils.swift */,
 				3CF89EE91CC1771900BD9CD2 /* KeychainWrapper.swift */,
+				B224199E1CCA88CE00E28914 /* Constants.swift */,
 			);
 			name = Extra;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */,
+				B22419A01CCA914100E28914 /* AddCommentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -568,10 +574,12 @@
 				5E5FCC7D1CBC038B0005501F /* User.swift in Sources */,
 				5E5FCC751CBBFD200005501F /* UIViewController+LoadingIndicatorView.swift in Sources */,
 				5E5FCC841CBC04B70005501F /* SearchTableViewController.swift in Sources */,
+				B22419A11CCA914100E28914 /* AddCommentViewController.swift in Sources */,
 				3CF89EEA1CC1771900BD9CD2 /* KeychainWrapper.swift in Sources */,
 				3CF89EEC1CC1829200BD9CD2 /* SearchCollectionViewController.swift in Sources */,
 				5E20356A1CBBEFF10019DABE /* BaseService.swift in Sources */,
 				5E0857131CB6BACF00AFDD24 /* Utils.swift in Sources */,
+				B224199F1CCA88CE00E28914 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
