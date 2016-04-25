@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import UITextView_Placeholder
 
 class RecommendTableViewController: UITableViewController, RecommendDelegate {
     
@@ -16,6 +17,7 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var doneBarButtonItem: UIBarButtonItem!
     
+    let commentSegue = "commentSegue"
     var user: User!
     var comment: String? {
         didSet {
@@ -28,16 +30,44 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
         }
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == commentSegue {
+            let commentVC = segue.destinationViewController as! AddCommentViewController
+            commentVC.recommendDelegate = self
+            if let comment = comment {
+                if !comment.isEmpty {
+                    commentVC.commentText = comment
+                }
+            }
+        } else {
+            super.prepareForSegue(segue, sender: sender)
+        }
+    }
+    
+    //MARK: - Private
+    
     private func initViews() {
         navigationItem.title = "Recommendation"
-        userNameLabel.text = user.getFullName()
+        userNameLabel.text = "Mario"
+//        userNameLabel.text = user.getFullName()
         doneBarButtonItem.enabled = false
     }
+    
+    private func dismissOnTopVCAndEnableDoneButton() {
+        navigationController?.popViewControllerAnimated(true)
+        if subcategory != nil {
+            doneBarButtonItem.enabled = true
+        }
+    }
+    
+    //MARK: - Actions
     
     @IBAction func donePressed(sender: UIBarButtonItem) {
         let userId = UInt(Utils.load(Utils.userIdKey))
@@ -48,12 +78,19 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
         }
     }
     
+    //MARK: -TableViewDelegate
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        switch indexPath.item {
-//        case 1:
-//        case 2:
-//        }
+        switch indexPath.item {
+        case 1:
+            performSegueWithIdentifier(commentSegue, sender: nil)
+            break
+        default:
+            break
+        }
     }
+    
+    // MARK: -RecommendDelegate
     
     func onCommentFilled(comment: String) {
         self.comment = comment
@@ -65,12 +102,6 @@ class RecommendTableViewController: UITableViewController, RecommendDelegate {
         categoryLabel.text = subcategory.name
     }
     
-    private func dismissOnTopVCAndEnableDoneButton() {
-        dismissViewControllerAnimated(true, completion: nil)
-        if subcategory != nil {
-            doneBarButtonItem.enabled = true
-        }
-    }
 }
 
 protocol RecommendDelegate {
