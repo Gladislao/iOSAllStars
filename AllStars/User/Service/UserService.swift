@@ -6,9 +6,10 @@
 //  Copyright © 2016 Belatrix. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 typealias UserListServiceResponse = (Array<User>?, NSError?) -> Void
+typealias UserCategoriesList = (categories: [Category]?, error: NSError?) -> Void
 
 class UserService: BaseService {
 
@@ -28,6 +29,18 @@ class UserService: BaseService {
             }
         }
         
+    }
+    
+    class func getEmployeeCategoryList(employeePk: UInt, onCompletion: UserCategoriesList) {
+        let fullPath = BaseService.subtituteKeyInMethod(Constants.Methods.employeeCategoryList, pathSegment: (key: Constants.PathSegmentKeys.employeeId, value: String(employeePk)))
+        BaseService.makeRequest(fullPath, method: .GET, parameters: nil) { (json: AnyObject?, error: NSError?) in
+            if error == nil {
+                let employeeCategories = Category.parseCategories(json as! [[String: AnyObject]])
+                onCompletion(employeeCategories, nil)
+            } else {
+                onCompletion(nil, error)
+            }
+        }
     }
 
 }

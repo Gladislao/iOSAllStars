@@ -12,7 +12,30 @@ class Category {
     
     var pk: UInt?
     var name: String?
-    var subcategories: [Category]?
     var parentCategoryPk: UInt?
+    
+}
+
+extension Category {
+    
+    struct Keys {
+        static let pk = "pk"
+        static let name = "name"
+    }
+    
+    class func parseCategory(json: [String: AnyObject]) -> Category {
+        let category = Category()
+        category.pk = json[Keys.pk] as? UInt
+        category.name = json[Keys.name] as? String
+        return category
+    }
+    
+    class func parseCategories(json: [[String: AnyObject]]) -> [Category] {
+        var categories = [Category]()
+        for category in json {
+            categories.append(Category.parseCategory(category))
+        }
+        return categories
+    }
     
 }

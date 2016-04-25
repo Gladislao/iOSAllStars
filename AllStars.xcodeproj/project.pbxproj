@@ -37,6 +37,7 @@
 		B22419A11CCA914100E28914 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419A01CCA914100E28914 /* AddCommentViewController.swift */; };
 		B24F5F281CC974C2005AD337 /* Stars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24F5F271CC974C2005AD337 /* Stars.storyboard */; };
 		B2C76F811CCEB2C2008AECFC /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C76F801CCEB2C2008AECFC /* CategoriesTableViewController.swift */; };
+		B2C76F841CCEB721008AECFC /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C76F831CCEB721008AECFC /* CategoryService.swift */; };
 		E68911A22F3009CCE1BA36BD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE28D5EB2F61DD77C0E1530 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		B22419A01CCA914100E28914 /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCommentViewController.swift; path = ../../../../../../Applications/AddCommentViewController.swift; sourceTree = "<group>"; };
 		B24F5F271CC974C2005AD337 /* Stars.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stars.storyboard; sourceTree = "<group>"; };
 		B2C76F801CCEB2C2008AECFC /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		B2C76F831CCEB721008AECFC /* CategoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
 		ED907FB9C7B29763077E3471 /* Pods_AllStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF07026895184D5EFF02763F /* Pods-AllStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllStars/Pods-AllStars.release.xcconfig"; sourceTree = "<group>"; };
 		F7FFD069F008DDCD3496482B /* Pods-AllStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllStars/Pods-AllStars.debug.xcconfig"; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		B22419971CC98BA000E28914 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B2C76F821CCEB708008AECFC /* Service */,
 				B22419981CC98BBB00E28914 /* Model */,
 			);
 			path = Category;
@@ -377,6 +380,14 @@
 				B24F5F271CC974C2005AD337 /* Stars.storyboard */,
 			);
 			path = Stars;
+			sourceTree = "<group>";
+		};
+		B2C76F821CCEB708008AECFC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B2C76F831CCEB721008AECFC /* CategoryService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +582,7 @@
 				5E0857171CB6BB1B00AFDD24 /* LoginViewController.swift in Sources */,
 				5E5FCC731CBBF6DE0005501F /* LoginService.swift in Sources */,
 				5E5FCC871CBC0AA40005501F /* UserTableViewCell.swift in Sources */,
+				B2C76F841CCEB721008AECFC /* CategoryService.swift in Sources */,
 				B22419961CC97FAA00E28914 /* RecommendTableViewController.swift in Sources */,
 				5E5FCC7F1CBC03A90005501F /* UserService.swift in Sources */,
 				5E0857081CB6B73700AFDD24 /* ProfileTableViewController.swift in Sources */,
