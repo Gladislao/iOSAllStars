@@ -30,14 +30,15 @@
 		5E5FCC821CBC04950005501F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5FCC811CBC04950005501F /* Search.storyboard */; };
 		5E5FCC841CBC04B70005501F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5FCC831CBC04B70005501F /* SearchTableViewController.swift */; };
 		5E5FCC871CBC0AA40005501F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5FCC861CBC0AA40005501F /* UserTableViewCell.swift */; };
-		B22419961CC97FAA00E28914 /* RecommendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */; };
+		B22419961CC97FAA00E28914 /* GiveStarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419951CC97FAA00E28914 /* GiveStarTableViewController.swift */; };
 		B224199A1CC98BD200E28914 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419991CC98BD200E28914 /* Category.swift */; };
-		B224199D1CC9923E00E28914 /* RecommendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224199C1CC9923E00E28914 /* RecommendService.swift */; };
+		B224199D1CC9923E00E28914 /* StarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224199C1CC9923E00E28914 /* StarService.swift */; };
 		B224199F1CCA88CE00E28914 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224199E1CCA88CE00E28914 /* Constants.swift */; };
-		B22419A11CCA914100E28914 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419A01CCA914100E28914 /* AddCommentViewController.swift */; };
+		B22419A11CCA914100E28914 /* StarCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22419A01CCA914100E28914 /* StarCommentViewController.swift */; };
 		B24F5F281CC974C2005AD337 /* Stars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24F5F271CC974C2005AD337 /* Stars.storyboard */; };
 		B2C76F811CCEB2C2008AECFC /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C76F801CCEB2C2008AECFC /* CategoriesTableViewController.swift */; };
 		B2C76F841CCEB721008AECFC /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C76F831CCEB721008AECFC /* CategoryService.swift */; };
+		B2C76F8B1CCFC1B5008AECFC /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C76F8A1CCFC1B5008AECFC /* Star.swift */; };
 		E68911A22F3009CCE1BA36BD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE28D5EB2F61DD77C0E1530 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,14 +89,15 @@
 		5E5FCC831CBC04B70005501F /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewController.swift; path = Search/ViewController/SearchTableViewController.swift; sourceTree = "<group>"; };
 		5E5FCC861CBC0AA40005501F /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = Search/View/UserTableViewCell.swift; sourceTree = "<group>"; };
 		7EE28D5EB2F61DD77C0E1530 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendTableViewController.swift; sourceTree = "<group>"; };
+		B22419951CC97FAA00E28914 /* GiveStarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveStarTableViewController.swift; sourceTree = "<group>"; };
 		B22419991CC98BD200E28914 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		B224199C1CC9923E00E28914 /* RecommendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendService.swift; sourceTree = "<group>"; };
+		B224199C1CC9923E00E28914 /* StarService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarService.swift; sourceTree = "<group>"; };
 		B224199E1CCA88CE00E28914 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B22419A01CCA914100E28914 /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCommentViewController.swift; path = ../../../../../../Applications/AddCommentViewController.swift; sourceTree = "<group>"; };
+		B22419A01CCA914100E28914 /* StarCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StarCommentViewController.swift; path = ../../../../../../Applications/StarCommentViewController.swift; sourceTree = "<group>"; };
 		B24F5F271CC974C2005AD337 /* Stars.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stars.storyboard; sourceTree = "<group>"; };
 		B2C76F801CCEB2C2008AECFC /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		B2C76F831CCEB721008AECFC /* CategoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		B2C76F8A1CCFC1B5008AECFC /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		ED907FB9C7B29763077E3471 /* Pods_AllStars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllStars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF07026895184D5EFF02763F /* Pods-AllStars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllStars.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllStars/Pods-AllStars.release.xcconfig"; sourceTree = "<group>"; };
 		F7FFD069F008DDCD3496482B /* Pods-AllStars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllStars.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllStars/Pods-AllStars.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,8 +342,8 @@
 		B22419941CC97F8300E28914 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B22419951CC97FAA00E28914 /* RecommendTableViewController.swift */,
-				B22419A01CCA914100E28914 /* AddCommentViewController.swift */,
+				B22419951CC97FAA00E28914 /* GiveStarTableViewController.swift */,
+				B22419A01CCA914100E28914 /* StarCommentViewController.swift */,
 				B2C76F801CCEB2C2008AECFC /* CategoriesTableViewController.swift */,
 			);
 			path = ViewController;
@@ -367,7 +369,7 @@
 		B224199B1CC991EE00E28914 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B224199C1CC9923E00E28914 /* RecommendService.swift */,
+				B224199C1CC9923E00E28914 /* StarService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -375,6 +377,7 @@
 		B24F5F261CC971B7005AD337 /* Stars */ = {
 			isa = PBXGroup;
 			children = (
+				B2C76F891CCFC1A7008AECFC /* Model */,
 				B224199B1CC991EE00E28914 /* Service */,
 				B22419941CC97F8300E28914 /* ViewController */,
 				B24F5F271CC974C2005AD337 /* Stars.storyboard */,
@@ -388,6 +391,14 @@
 				B2C76F831CCEB721008AECFC /* CategoryService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B2C76F891CCFC1A7008AECFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2C76F8A1CCFC1B5008AECFC /* Star.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,20 +591,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E0857171CB6BB1B00AFDD24 /* LoginViewController.swift in Sources */,
+				B2C76F8B1CCFC1B5008AECFC /* Star.swift in Sources */,
 				5E5FCC731CBBF6DE0005501F /* LoginService.swift in Sources */,
 				5E5FCC871CBC0AA40005501F /* UserTableViewCell.swift in Sources */,
 				B2C76F841CCEB721008AECFC /* CategoryService.swift in Sources */,
-				B22419961CC97FAA00E28914 /* RecommendTableViewController.swift in Sources */,
+				B22419961CC97FAA00E28914 /* GiveStarTableViewController.swift in Sources */,
 				5E5FCC7F1CBC03A90005501F /* UserService.swift in Sources */,
 				5E0857081CB6B73700AFDD24 /* ProfileTableViewController.swift in Sources */,
 				3CF89EEE1CC1833600BD9CD2 /* UserCollectionViewCell.swift in Sources */,
-				B224199D1CC9923E00E28914 /* RecommendService.swift in Sources */,
+				B224199D1CC9923E00E28914 /* StarService.swift in Sources */,
 				B224199A1CC98BD200E28914 /* Category.swift in Sources */,
 				5E495E481CB5AFB000E5A4D9 /* AppDelegate.swift in Sources */,
 				5E5FCC7D1CBC038B0005501F /* User.swift in Sources */,
 				5E5FCC751CBBFD200005501F /* UIViewController+LoadingIndicatorView.swift in Sources */,
 				5E5FCC841CBC04B70005501F /* SearchTableViewController.swift in Sources */,
-				B22419A11CCA914100E28914 /* AddCommentViewController.swift in Sources */,
+				B22419A11CCA914100E28914 /* StarCommentViewController.swift in Sources */,
 				3CF89EEA1CC1771900BD9CD2 /* KeychainWrapper.swift in Sources */,
 				3CF89EEC1CC1829200BD9CD2 /* SearchCollectionViewController.swift in Sources */,
 				5E20356A1CBBEFF10019DABE /* BaseService.swift in Sources */,

@@ -9,12 +9,14 @@
 import UIKit
 
 class ProfileTableViewController: UITableViewController {
+    
+    static let starVC = "starVC"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableHeaderView = tableHeader()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Done, target: self, action: "logout")
-        
+        //TODO hide Add bar button item if profile is from the logged in user
     }
 
     func logout() {
@@ -81,8 +83,11 @@ class ProfileTableViewController: UITableViewController {
     
     @IBAction func starPressed(sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Stars", bundle: nil)
-        let recommendVC = storyboard.instantiateViewControllerWithIdentifier("recommendVC")
-        presentViewController(recommendVC, animated: true, completion: nil)
+        let starNavigationVC = storyboard.instantiateViewControllerWithIdentifier(ProfileTableViewController.starVC) as! UINavigationController
+//      TODO: pass the user who will receive the star
+//      let giveStarVC = starNavigationVC.childViewControllers.first as! GiveStarTableViewController
+//      giveStarVC.user = ???
+        presentViewController(starNavigationVC, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source

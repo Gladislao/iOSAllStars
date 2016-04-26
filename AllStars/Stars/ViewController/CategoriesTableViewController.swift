@@ -11,46 +11,61 @@ import UIKit
 
 class CategoriesTableViewController: UITableViewController {
     
-    var categoryPk: UInt?
-    var categories = [Category]()
+    static let categoryCell = "categoryCell"
+    static let categoriesTableVC = "categoriesTableVC"
     
-    //MARK: - Lifecycle
+    var categoryPk: UInt?
+    var categories: [Category]!
+    var recommendDelegate: RecommendDelegate!
+    var isSubcategory: Bool {
+        get {
+            return categoryPk != nil
+        }
+    }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    //MARK: - Private
+    // MARK: - Private
     
-    private func getCategories() {
-//        showLoadingIndicator()
-//        if let categoryPk = categoryPk {
-//            CategoryService.getSubcategoryList(categoryPk, onCompletion: { (subcategories, error) in
-//                
-//            })
-//        } else {
-//            let employeePk = UInt(Utils.load(Utils.userIdKey))
-//            UserService.getEmployeeCategoryList(employeePk!, onCompletion: { (categories, error) in
-//                
-//            })
-//        }
+    private func fetchAndDisplaySubcategories(categoryPk: UInt) {
+        showLoadingIndicator()
+        CategoryService.getSubcategoryList(categoryPk) { (subcategories, error) in
+            self.hideLoadingIndicator()
+            if error == nil {
+                let subcategoriesVC = self.storyboard?.instantiateViewControllerWithIdentifier(CategoriesTableViewController.categoriesTableVC) as! CategoriesTableViewController
+                subcategoriesVC.categoryPk = categoryPk
+                subcategoriesVC.categories = subcategories
+                subcategoriesVC.recommendDelegate = self.recommendDelegate
+                self.navigationController?.pushViewController(subcategoriesVC, animated: true)
+            }
+        }
     }
     
-    //MARK - TableViewDelegate
+    // MARK - TableViewDelegate
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let categoryCell = tableView.dequeueReusableCellWithIdentifier(CategoriesTableViewController.categoryCell, forIndexPath: indexPath)
+        let category = categories[indexPath.item]
+        categoryCell.textLabel?.text = category.name
+        return categoryCell
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let item = categories[indexPath.item]
-//        if let categoryPk = categoryPk {
-//            
-//        } else {
-//            let subcategoriesVC = storyboard?.instantiateViewControllerWithIdentifier("categoriesTableVC") as! CategoriesTableViewController
-//            subcategoriesVC.categoryPk = item.pk
-//            navigationController?.pushViewController(subcategoriesVC, animated: true)
-//        }
+        let category = categories[indexPath.item]
+        if isSubcategory {
+            category.parentCategoryPk = categoryPk!
+            recommendDelegate.onSubcategorySelected(category)
+        } else {
+            fetchAndDisplaySubcategories(category.pk!)
+        }
     }
     
 }

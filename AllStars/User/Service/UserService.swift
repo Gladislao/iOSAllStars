@@ -36,9 +36,9 @@ class UserService: BaseService {
         BaseService.makeRequest(fullPath, method: .GET, parameters: nil) { (json: AnyObject?, error: NSError?) in
             if error == nil {
                 let employeeCategories = Category.parseCategories(json as! [[String: AnyObject]])
-                onCompletion(employeeCategories, nil)
+                onCompletion(categories: employeeCategories, error: nil)
             } else {
-                onCompletion(nil, error)
+                onCompletion(categories: nil, error: error)
             }
         }
     }
